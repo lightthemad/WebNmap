@@ -1,5 +1,11 @@
 <?php
 
+if (isset($_POST['scan'])){
+
+    include_once root. "/model/services/scan.php";
+
+}
+
 $css = "/view/style/style.css";
 
 $body =
@@ -10,8 +16,6 @@ $js = "/view/js/script.js";
 
 include_once "basic_template.php";
 
-if (isset($_POST['scan'])){
-$ip=$_SERVER['REMOTE_ADDR'];
-exec("nmap -T4 ".$ip." -oX model/uploads/test.xml");
-exec("./model/services/nmapxml/nmapxml model/uploads/test.xml html > view/templates/scan.html");
-}
+
+
+

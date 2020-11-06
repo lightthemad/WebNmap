@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * write down your own custom functions here
  */
@@ -8,5 +10,6 @@ function home(){
 }
 
 function results(){
-    include_once root. "/view/templates/scan.html";
+    include_once root. "/view/templates/scans/". $_SESSION['seq']. ".html";
 }
+
